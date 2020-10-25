@@ -1,21 +1,21 @@
-<template >
-<!-- Footer -->
-    <footer id="sticky-footer" class="py-4 black text-white-50">
-      <div class="container text-center">
-      <span>Copyright © 2020 Stipe Vrkić  Contact: <a href="mailto:svkic@tvz.hr">svrkic@tvz.hr</a></span>
-      </div>
-    </footer>
-    <!-- Footer -->
+<template>    
+        <footer class="footer py-4 bg-dark">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 text-light ">Copyright © Stipe Vrkic 2020</div>
+    
+                </div>
+            </div>
+        </footer>
 </template>
 
-
 <script>
- export default {
-       
-  }
+export default {
+    
+}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+
+<style>
 
 </style>
