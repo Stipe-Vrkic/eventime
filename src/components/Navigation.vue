@@ -11,17 +11,18 @@
                     <ul class="navbar-nav text-uppercase ml-auto" >
                         <li class="nav-item"><a class="nav-link js-scroll-trigger"  href="#services" data-toggle="collapse" data-target="#navbarResponsive" v-smooth-scroll>Usluge</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger"  href="#events" data-toggle="collapse" data-target="#navbarResponsive" v-smooth-scroll>Događaji</a></li>
-                        <!--<li class="nav-item"><a class="nav-link js-scroll-trigger"  href="#about" data-toggle="collapse" data-target="#navbarResponsive" v-smooth-scroll>O nama</a></li>-->
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger"  href="#contact" v-smooth-scroll>Kontakt</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger"  href="#contact" data-toggle="collapse" data-target="#navbarResponsive" v-smooth-scroll>Kontakt</a></li>
                     </ul>
-                    <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#eventsModal1"><span class="fas fa-user"></span> REGISTRACIJA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#eventsModal1"><span class="fas fa-sign-in-alt"></span> PRIJAVA</a>
-                    </li>
+                    <ul class="nav navbar-nav ml-auto  text-uppercase">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger"  href="./sites/Login/login.vue" data-toggle="collapse" data-target="#navbarResponsive" v-smooth-scroll>Log in</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger"  href="#login" data-toggle="collapse" data-target="#navbarResponsive" v-smooth-scroll>Sign up</a></li>
+                   
                     </ul>
+                    
+            
+                     
+                
+                   
                 </div>
             </div>
         </nav>  

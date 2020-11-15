@@ -7,6 +7,7 @@
         <Contact/>      
         <Footer/> 
         <Modal/> 
+      
   
           
   </div>
@@ -21,6 +22,7 @@ import Events from './components/Events.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 import Modal from './components/Modal.vue'
+
 
 
 

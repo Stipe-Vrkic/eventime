@@ -5404,7 +5404,6 @@ a.close.disabled {
 .modal {
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 1050;
   display: none;
   width: 100%;
@@ -10146,7 +10145,7 @@ img::-moz-selection {
 }
 header.masthead {
   padding-top: 10.5rem;
-  padding-bottom: 6rem;
+  padding-bottom: 0rem;
   text-align: center;
   color: #fff;
   background-image: url("../img/header-bg.jpg");
@@ -10173,7 +10172,7 @@ header.masthead .masthead-heading {
 @media (min-width: 768px) {
   header.masthead {
     padding-top: 17rem;
-    padding-bottom: 12.5rem;
+    padding-bottom: 0rem;
   }
   header.masthead .masthead-subheading {
     font-size: 2.25rem;
@@ -10439,19 +10438,7 @@ header.masthead .masthead-heading {
     padding: 0 100px 20px 20px;
   }
 }
-.team-member {
-  margin-bottom: 3rem;
-  text-align: center;
-}
-.team-member img {
-  width: 14rem;
-  height: 14rem;
-  border: 0.5rem solid rgba(0, 0, 0, 0.1);
-}
-.team-member h4 {
-  margin-top: 1.5rem;
-  margin-bottom: 0;
-}
+
 
 section#contact {
   background-color: #212529;
@@ -10511,4 +10498,11 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: center;
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+button:hover{color: red!important}
+
+#clouds {
+  fill: white!important
 }
