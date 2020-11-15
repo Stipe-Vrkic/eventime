@@ -6,25 +6,25 @@
                     <h2 class="section-heading text-uppercase">Kontakirajte nas!</h2>
                     <h3 class="section-subheading text-muted">Na vaše pitanje odgovaramo odmah</h3>
                 </div>
-                <form id="contactForm" name="contact" novalidate="novalidate" method="POST" netlify>
+                <form id="contactForm" name="contactform" novalidate="novalidate" method="POST" netlify>
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" id="name" type="text" placeholder="Ime i prezime *" required="required" data-validation-required-message="Please enter your name." />
+                                <input class="form-control" id="name" name="ime" type="text" placeholder="Ime i prezime *" required="required" data-validation-required-message="Please enter your name." />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="email" type="email" placeholder="Email *" required="required" data-validation-required-message="Please enter your email address." />
+                                <input class="form-control" id="email" name="email" type="email" placeholder="Email *" required="required" data-validation-required-message="Please enter your email address." />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group mb-md-0">
-                                <input class="form-control" id="phone" type="tel" placeholder="Mobitel *" required="required" data-validation-required-message="Please enter your phone number." />
+                                <input class="form-control" id="phone" name="telefon" type="tel" placeholder="Mobitel *" required="required" data-validation-required-message="Please enter your phone number." />
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
-                                <textarea class="form-control" id="message" placeholder="Poruka *" required="required" data-validation-required-message="Please enter a message."></textarea>
+                                <textarea class="form-control" id="message" placeholder="Poruka *" name="poruka" required="required" data-validation-required-message="Please enter a message."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
