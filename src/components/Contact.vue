@@ -6,7 +6,7 @@
                     <h2 class="section-heading text-uppercase">Kontakirajte nas!</h2>
                     <h3 class="section-subheading text-muted">Na vaše pitanje odgovaramo odmah</h3>
                 </div>
-                <form id="contactForm" name="contactform" novalidate="novalidate" method="POST" netlify>
+                <form  name="contactform"  method="POST" data-netlify="true">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -33,7 +33,7 @@
                         <div id="success"></div>
                         <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Pošalji poruku</button>
                     </div>
-                     <input type="hidden" name="form-name" value="contact" />
+                    
                 </form>
             </div>
         </section>
