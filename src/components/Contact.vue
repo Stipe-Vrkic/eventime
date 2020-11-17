@@ -1,5 +1,8 @@
 <template>
   <form name="simple-form" method="POST" data-netlify="true">
+      
+     <input type="hidden" name="form-name" value="simple-form"/>
+      
   <p>
     <label>Your Name: <input type="text" name="name"/></label>
   </p>
@@ -11,7 +14,7 @@
   </p>
   
   <p><button type="submit">Send</button></p>
-   <input type="hidden"  name="form-name" value="simple-form" /><input>
+  
 </form>
 </template>
 <script>
