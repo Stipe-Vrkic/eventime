@@ -18,10 +18,12 @@
     <body id="page-top">
     <div id="app"></div>  
     <form name="ask-question" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="name" />
-        <input type="radio" name="panelist" />
-        <textarea name="question"></textarea>
-      </form>
+        <input type="hidden" name="form-name" value="ask-question" />
+         <input class="form-control" id="name" name="ime" type="text" placeholder="Ime i prezime *" required="required" data-validation-required-message="Please enter your name." />
+         <input class="form-control" id="email" name="email" type="email" placeholder="Email *" required="required" data-validation-required-message="Please enter your email address." />
+         <input class="form-control" id="phone" name="telefon" type="tel" placeholder="Mobitel *" required="required" data-validation-required-message="Please enter your phone number." />
+         <textarea class="form-control" id="message" placeholder="Poruka *" name="poruka" required="required" data-validation-required-message="Please enter a message."></textarea>
+  </form>
     </body>
 </html>
 
