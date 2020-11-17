@@ -6,7 +6,7 @@
                     <h2 class="section-heading text-uppercase">Kontakirajte nas!</h2>
                     <h3 class="section-subheading text-muted">Na vaše pitanje odgovaramo odmah</h3>
                 </div>
-                <form   name="ask-question" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                <form   name="ask-question" method="post" data-netlify="true" data-netlify-honeypot="bot-field" enctype="application/x-www-form-urlencoded">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
