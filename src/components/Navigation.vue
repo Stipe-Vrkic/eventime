@@ -14,9 +14,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger"  href="#contact" data-toggle="collapse" data-target="#navbarResponsive" v-smooth-scroll>Kontakt</a></li>
                     </ul>
                     <ul class="nav navbar-nav ml-auto  text-uppercase">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger"  href="./sites/Login/login.vue" data-toggle="collapse" data-target="#navbarResponsive" v-smooth-scroll>Log in</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger"  href="#login" data-toggle="collapse" data-target="#navbarResponsive" v-smooth-scroll>Sign up</a></li>
-                   
+                    <li class="nav-item" href="#page-top" data-toggle="collapse" data-target="#navbarResponsive" v-smooth-scroll><div data-netlify-identity-button></div></li>    
                     </ul>
                     
             

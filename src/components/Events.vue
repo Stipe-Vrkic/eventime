@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4" v-for="(obj,key) in  eventsJSON" :key="key" >
                         <div class="events-item">
-                            <a class="events-link" data-toggle="modal" href="#eventsModal1">
+                            <a class="events-link" data-toggle="modal" href="#eventsModal1" v-on:click="load(obj.title)">
                                 <div class="events-hover">
                                     <div class="events-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -27,16 +27,19 @@
 </template>
 
 <script>
+import { EventBus } from '@/assets/js/bus.js'
 export default {
     data:() =>({
         eventsJSON: [ 
         {  img:'assets/img/events/01-thumbnail.jpg',
             title:'Glazba',
-            caption:'Koncerti i festivali'
+            caption:'Koncerti i festivali',
+            value:'glazba'
         },
         {  img:'assets/img/events/02-thumbnail.jpg',
             title:'Kultura',
-            caption:'Predstave, Izložbe'
+            caption:'Predstave, Izložbe',
+            value:'kultura'
         },
         {  img:'assets/img/events/03-thumbnail.jpg',
             title:'Hrana',
@@ -61,9 +64,15 @@ export default {
     letterIcon: function(path) {
       return require("@/" + path);
     },
-  },
+
+    load: function(string) {
+    EventBus.$emit('i-got-clicked', string);
+    },
+
+ }
     
 }
+
 </script>
 
 <style>
