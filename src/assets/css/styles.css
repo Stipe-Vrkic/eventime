@@ -9778,6 +9778,7 @@ button.bg-dark:focus {
 
 .text-uppercase {
   text-transform: uppercase !important;
+  
 }
 
 .text-capitalize {
@@ -10516,3 +10517,18 @@ button:hover{color:#C5202E!important}
 #clouds {
   fill: white!important
 }
+.single-event span {color:gray;
+                    padding-left: 20px;}
+
+.event_info{padding-bottom: 30px;}
+
+.bck{
+  background-color:  #f8f9fa !important;
+
+}
+
+.bck:hover{
+  background-color:  #a5a5a5 !important;
+
+  transition: 1s;}
+ #web {color:gray!important};

@@ -6,11 +6,14 @@
                     <div class="close-modal" v-on:click="forceRerender()" data-dismiss="modal"><img src="../assets/img/close-icon.svg" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center"  id="dinamic">
-                            <div class="col-lg-3 col-sm-4 mb-3" v-for="(obj,key) in filtrirano" :key="key" v-on:click="loadevent(obj.id);singlesearch(obj.id);"> 
-                                <div class="modal-body">
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 mb-3  bck" v-for="(obj,key) in filtrirano" :key="key" v-on:click="loadevent(obj.id);singlesearch(obj.id);">
+                                 
+                                <div class="modal-body ">
                                     <!-- Project Details Go Here-->
-                                    <h4 class="text-uppercase">{{ obj.title }}</h4>                                  
+                                    <h5 class="text-uppercase">{{ obj.title }}</h5>
+                                      <div class="single-event">                                 
                                    <img :src="letterIcon(obj.img)" class="img-fluid" />
+                                    </div>  
                                     <p>{{ obj.caption }}</p>
                                     </div>       
                                              
@@ -26,6 +29,7 @@
 
 <script>
 import { EventBus } from '@/assets/js/bus.js'
+import Events from '@/assets/data/Events.json'
 export default {
   
      
@@ -37,97 +41,21 @@ export default {
      },
     data:() =>({
           dinamic: 0,
-          modalconent:'<div class="col-lg-3 col-sm-4 mb-3" v-for="(obj,key) in filtrirano" :key="key" v-on:click="loadevent()"><div class="modal-body"> <h4 class="text-uppercase">{{ obj.title }}</h4> <img :src="letterIcon(obj.img)" class="img-fluid" /><p>{{ obj.caption }}</p> </div>',
+          modalconent:'<div class="col-lg-3 col-sm-4 mb-3" v-for="(obj,key) in filtrirano" :key="key" v-on:click="loadevent()"><div class="modal-body"> <h5 class="text-uppercase">{{ obj.title }}</h5> <img :src="letterIcon(obj.img)" class="img-fluid" /><p>{{ obj.caption }}</p> </div>',
           search: '',
         singlevent:[],
         event_id:0,
         event_img:"",
         event_title:"",
-        event_caption:"",
-        events: [ 
-        {   id:1,
-            img:'assets/img/events/01-thumbnail.jpg',
-            title:'Glazba',
-            caption:'1'
-        
-        },
-        {   id:2,
-            img:'assets/img/events/01-thumbnail.jpg',
-            title:'Glazba',
-            caption:'2'
-        },
-        {   id:3,
-            img:'assets/img/events/01-thumbnail.jpg',
-            title:'Glazba',
-            caption:'3'
-        },
-        {   id:4,
-            img:'assets/img/events/01-thumbnail.jpg',
-            title:'Glazba',
-            caption:'4'
-        },
-        {   id:5,
-            img:'assets/img/events/01-thumbnail.jpg',
-            title:'Glazba',
-            caption:'5'
-        },
-        {   id:6,
-            img:'assets/img/events/01-thumbnail.jpg',
-            title:'Glazba',
-            caption:'6'
-        },
-        {   id:7,
-            img:'assets/img/events/01-thumbnail.jpg',
-            title:'Glazba',
-            caption:'7'
-        },
-        {   id:8,
-            img:'assets/img/events/01-thumbnail.jpg',
-            title:'Glazba',
-            caption:'8'
-        },
-        {   id:9,
-            img:'assets/img/events/01-thumbnail.jpg',
-            title:'Glazba',
-            caption:'9'
-        },
-        {   id:10,
-            img:'assets/img/events/01-thumbnail.jpg',
-            title:'Glazba',
-            caption:'10'
-        },
-        {   id:11,
-            img:'assets/img/events/01-thumbnail.jpg',
-            title:'Glazba',
-            caption:'11'
-        },
-        {   id:12,
-            img:'assets/img/events/01-thumbnail.jpg',
-            title:'Glazba',
-            caption:'12'
-        },
-        {   id:13,
-            img:'assets/img/events/02-thumbnail.jpg',
-            title:'Kultura',
-            caption:'1'
-        },
-        {   id:14,
-            img:'assets/img/events/02-thumbnail.jpg',
-            title:'Kultura',
-            caption:'1'
-        },
-        {   id:15,
-            img:'assets/img/events/03-thumbnail.jpg',
-            title:'Hrana',
-            caption:'1'
-        },
-        {   id:16,
-            img:'assets/img/events/03-thumbnail.jpg',
-            title:'Hrana',
-            caption:'2'
-        }  
-         
-        ]
+        event_caption:"",   
+        event_organisation:"",
+        event_date:"",
+        event_adress:"",
+        event_more:"",
+        event_other:"",
+        event_link:"",
+        events: Events
+              
     }),
       methods: {
         forceRerender() {
@@ -143,16 +71,28 @@ export default {
     
     },
     singlesearch: function(event_id){
+
          this.singlevent = this.events.filter((item) =>
           item.id==event_id);
           this.event_title=this.singlevent[0].title;
            this.event_caption=this.singlevent[0].caption;
             this.event_img=this.letterIcon(this.singlevent[0].img);
-         document.getElementById("dinamic").innerHTML="<div class='col-lg-3 col-sm-4 mb-3'>" +
-                                                            "<div class='modal-body'>"+
+            this.event_organisation=this.singlevent[0].organisation;
+            this.event_date=this.singlevent[0].date;
+            this.event_adress=this.singlevent[0].adresa;
+            this.event_more=this.singlevent[0].more;
+            this.event_other=this.singlevent[0].other;
+            this.event_link=this.singlevent[0].link;
+          
+
+         document.getElementById("dinamic").innerHTML="<div class='col-lg-12 col-sm-12 mb-12'>" +
+                                                            "<div class='modal-body single-event'>"+
                                                                   "<h4 class='text-uppercase'>"+this.event_title+"</h4>"+                                  
                                                                   "<img src='"+this.event_img+"' class='img-fluid'/>"+
+                                                                    "<div class='event_info'><span>Datum:"+this.event_date+"</span><span>Mjesto:"+this.event_adress+"</span><span>Organizator:"+this.event_organisation+"</span><span>Web:<a id='web' href='"+this.event_link+"'>"+" "+this.event_link+"</a></span></div>"+
                                                                    "<p>"+this.event_caption+"</p>"+
+                                                                   "<p>"+this.event_more+"</p>"+
+                                                                   "<p>"+this.event_other+"</p>"+
                                                                    "</div>"+                  
                                                                     "</div>";
     } 
@@ -164,7 +104,7 @@ export default {
       let filtered = [];
       
         filtered = this.events.filter((item) =>
-          item.title==this.search);
+          item.kategorija==this.search);
         
       return filtered;
     },
