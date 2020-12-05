@@ -16,6 +16,8 @@
                     <ul class="nav navbar-nav ml-auto  text-uppercase">
                     <li class="nav-item" href="#page-top" data-toggle="collapse" data-target="#navbarResponsive" v-smooth-scroll><div data-netlify-identity-button></div></li>    
                     </ul>
+                    <p id="username"></p>
+                    
                     
             
                      
@@ -27,12 +29,15 @@
 </template>
 
 <script>
+
 export default {
+    
     
 
 data: function() {
   return {
-   scrollPosition: 0
+   scrollPosition: 0,
+
   }
  
 },
@@ -45,6 +50,7 @@ methods: {
     }
 }
 }
+
 </script>
 
 

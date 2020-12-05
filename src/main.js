@@ -20,6 +20,7 @@ new Vue({
   
 }).$mount('#app')
 
-
+const user = window.netlifyIdentity.currentUser();
+document.getElementById("username").innerHTML=user;
 
 
