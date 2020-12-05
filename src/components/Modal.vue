@@ -28,9 +28,6 @@
 
 
 <script>
-const myArray = [1,3,4,5]
-myArray.push(...[6,7,8,9]);
-console.log(myArray); // this will contain [1,2,3,4,5,6,7,8,9] now
 import { EventBus } from '@/assets/js/bus.js'
 import Events from '@/assets/data/Events.json'
 export default {
@@ -57,10 +54,17 @@ export default {
         event_more:"",
         event_other:"",
         event_link:"",
-        events: Events
+        events: Events,
+        going:0,
+        days:0
               
     }),
       methods: {
+        goingfunc(){
+        this.singlevent[0].going=this.singlevent[0].going+1;
+        this.going=this.singlevent[0].going;
+        console.log("this.going")
+        },
         forceRerender() {
       this.dinamic += 1;
      
@@ -86,16 +90,23 @@ export default {
             this.event_more=this.singlevent[0].more;
             this.event_other=this.singlevent[0].other;
             this.event_link=this.singlevent[0].link;
+            this.going=this.singlevent[0].going;
+            this.days= new Date();
+            console.log( this.days);
           
 
          document.getElementById("dinamic").innerHTML="<div class='col-lg-12 col-sm-12 mb-12'>" +
-                                                            "<div class='modal-body single-event'>"+
+                                                            "<div class='modal-body single-event single-event-sng'>"+
                                                                   "<h4 class='text-uppercase'>"+this.event_title+"</h4>"+                                  
                                                                   "<img src='"+this.event_img+"' class='img-fluid'/>"+
-                                                                    "<div class='event_info'><span>Datum:"+this.event_date+"</span><span>Mjesto:"+this.event_adress+"</span><span>Organizator:"+this.event_organisation+"</span><span>Web:<a id='web' href='"+this.event_link+"'>"+" "+this.event_link+"</a></span></div>"+
+                                                                   "<div class='event_going'>"+
+                                                                    "<span>Datum:"+this.event_date+"</span><span>Mjesto:"+this.event_adress+"</span><span>Organizator:"+this.event_organisation+"</span><span>Web:<a id='web' href='"+this.event_link+"'>"+" "+this.event_link+"</a></span>"+
+                                                                   "</div>"+
+                                                                    "<div class='event_info'>"+
                                                                    "<p>"+this.event_caption+"</p>"+
                                                                    "<p>"+this.event_more+"</p>"+
                                                                    "<p>"+this.event_other+"</p>"+
+                                                                   "</div>"+
                                                                    "</div>"+                  
                                                                     "</div>";
     } 
@@ -114,6 +125,7 @@ export default {
   },
 
 }
+
 </script>
 
 <style>

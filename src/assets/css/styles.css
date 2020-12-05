@@ -10517,18 +10517,36 @@ button:hover{color:#C5202E!important}
 #clouds {
   fill: white!important
 }
-.single-event span {color:gray;
+.single-event span {color:white;
                     padding-left: 20px;}
 
-.event_info{padding-bottom: 30px;}
+.event_info{
+  padding-bottom: 30px;
+    background-color: lightgray;
+    border-radius: 10px;
+    margin-top: 5px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 .bck{
   background-color:  #f8f9fa !important;
 
 }
-
+.single-event-sng img {
+  border-radius: 10px;
+}
+.event_going{
+  padding-bottom: 10px;
+    padding-top: 10px;
+    background-clip: red;
+    background-color: darkred;
+    border-radius: 5px;
+    color: white;
+}
 .bck:hover{
   background-color:  #a5a5a5 !important;
 
   transition: 1s;}
- #web {color:gray!important};
+ #web {color:white!important};

@@ -5,7 +5,7 @@
         <Services/>
         <Events/>
         <Contact/>
-     
+      
         <Footer/> 
         <Modal/>  
            
@@ -31,6 +31,7 @@ import Modal from './components/Modal.vue'
 
 
 
+
 export default {
   name: 'App',
   components: {
@@ -39,7 +40,7 @@ export default {
     Services,
     Events,
     Contact,
-    
+  
     Footer,
     Modal
     
