@@ -29,6 +29,12 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                   <input class="form-control" id="file" name="slika" type="file" placeholder="slika *"  />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
                     </div>
                     <div class="text-center">
                         <div id="success"></div>

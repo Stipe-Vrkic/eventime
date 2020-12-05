@@ -28,6 +28,9 @@
 
 
 <script>
+const myArray = [1,3,4,5]
+myArray.push(...[6,7,8,9]);
+console.log(myArray); // this will contain [1,2,3,4,5,6,7,8,9] now
 import { EventBus } from '@/assets/js/bus.js'
 import Events from '@/assets/data/Events.json'
 export default {
