@@ -35,6 +35,12 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
+                         <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                     <input class="form-control" id="test" name="test" type="text" placeholder="test"  />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
                     </div>
                     <div class="text-center">
                         <div id="success"></div>
