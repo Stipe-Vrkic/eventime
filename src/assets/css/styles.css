@@ -10531,8 +10531,11 @@ button:hover{color:#C5202E!important}
 }
 
 .bck{
-  background-color:  #f8f9fa !important;
+  background-color:  #eaeaea!important;;
 
+}
+.naslov{
+  padding-bottom: 10px;
 }
 .single-event-sng img {
   border-radius: 10px;
@@ -10541,7 +10544,7 @@ button:hover{color:#C5202E!important}
   padding-bottom: 10px;
     padding-top: 10px;
     background-clip: red;
-    background-color: darkred;
+    background-color: #C5202E;
     border-radius: 5px;
     color: white;
 }

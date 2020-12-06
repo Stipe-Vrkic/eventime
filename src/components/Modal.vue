@@ -29,15 +29,18 @@
 
 <script>
 import { EventBus } from '@/assets/js/bus.js'
-import Events from '@/assets/data/Events.json'
+import axios from "axios"
+
 export default {
-  
+     mounted () {
+      axios
+      .get('https://api.jsonbin.io/b/5fccd8552946d2126ffedbfc/1')
+      .then(response => (this.events = response.data))
+  },
      
      created() {
     EventBus.$on('i-got-clicked', string => {
-        this.search=string
-   
-    })
+        this.search=string});
      },
     data:() =>({
           dinamic: 0,
@@ -54,17 +57,17 @@ export default {
         event_more:"",
         event_other:"",
         event_link:"",
-        events: Events,
+        events:[{}],
         going:0,
-        days:0
+        days:0,
+     
               
     }),
+    
       methods: {
-        goingfunc(){
-        this.singlevent[0].going=this.singlevent[0].going+1;
-        this.going=this.singlevent[0].going;
-        console.log("this.going")
-        },
+      
+           
+        
         forceRerender() {
       this.dinamic += 1;
      
@@ -93,17 +96,20 @@ export default {
             this.going=this.singlevent[0].going;
             this.days= new Date();
             console.log( this.days);
+            
+         
+            
           
 
          document.getElementById("dinamic").innerHTML="<div class='col-lg-12 col-sm-12 mb-12'>" +
                                                             "<div class='modal-body single-event single-event-sng'>"+
-                                                                  "<h4 class='text-uppercase'>"+this.event_title+"</h4>"+                                  
+                                                                  "<h4 class='text-uppercase naslov'>"+this.event_title+"</h4>"+                                  
                                                                   "<img src='"+this.event_img+"' class='img-fluid'/>"+
                                                                    "<div class='event_going'>"+
                                                                     "<span>Datum:"+this.event_date+"</span><span>Mjesto:"+this.event_adress+"</span><span>Organizator:"+this.event_organisation+"</span><span>Web:<a id='web' href='"+this.event_link+"'>"+" "+this.event_link+"</a></span>"+
                                                                    "</div>"+
                                                                     "<div class='event_info'>"+
-                                                                   "<p>"+this.event_caption+"</p>"+
+                                                                   "<b>"+this.event_caption+"</b>"+
                                                                    "<p>"+this.event_more+"</p>"+
                                                                    "<p>"+this.event_other+"</p>"+
                                                                    "</div>"+
@@ -125,6 +131,7 @@ export default {
   },
 
 }
+
 
 </script>
 
