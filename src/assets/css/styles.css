@@ -10529,7 +10529,13 @@ button:hover{color:#C5202E!important}
     padding-left: 10px;
     padding-right: 10px;
 }
-
+.event_look{
+  background-color: #C5202E!important;
+  margin: 5px;
+  border-radius: 5px;
+  color: white;
+}
+ 
 .bck{
   background-color:  #eaeaea!important;;
 
@@ -10552,4 +10558,6 @@ button:hover{color:#C5202E!important}
   background-color:  #a5a5a5 !important;
 
   transition: 1s;}
- #web {color:white!important};
+ #web {color:white!important}
+
+ 

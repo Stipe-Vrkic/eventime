@@ -6,7 +6,7 @@
                     <div class="close-modal" v-on:click="forceRerender()" data-dismiss="modal"><img src="../assets/img/close-icon.svg" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center"  id="dinamic">
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 mb-3  bck" v-for="(obj,key) in filtrirano" :key="key" v-on:click="loadevent(obj.id);singlesearch(obj.id);">
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 mb-3  bck" v-for="(obj,key) in filtrirano" :key="key" v-on:click="loadevent(obj.id);singlesearch(obj.id);addgoing(obj.id)">
                                  
                                 <div class="modal-body ">
                                     <!-- Project Details Go Here-->
@@ -34,10 +34,14 @@ import axios from "axios"
 export default {
      mounted () {
       axios
-      .get('https://api.jsonbin.io/b/5fccd8552946d2126ffedbfc/1')
+      .get('https://api.jsonbin.io/b/5fce2d0e516f9d1270293ac0', {
+ headers: {
+   "secret-key": '$2b$10$rk7Pcq99UpxvI7sqMY0FOeGlKDiG8ychEv.BM.AjcIRPv9HK9.3Ay'
+ }
+})
       .then(response => (this.events = response.data))
   },
-     
+    
      created() {
     EventBus.$on('i-got-clicked', string => {
         this.search=string});
@@ -58,6 +62,7 @@ export default {
         event_other:"",
         event_link:"",
         events:[{}],
+        updatedevents:"",
         going:0,
         days:0,
      
@@ -65,9 +70,28 @@ export default {
     }),
     
       methods: {
-      
-           
+        addgoing(id){
+         this.going=this.going+1;
+         this.events.filter((item) =>
+         item.id==id)[0].going=this.events.filter((item) =>
+         item.id==id)[0].going+1
+         this.updatedevents=JSON.stringify(this.events)
         
+      let req = new XMLHttpRequest();
+
+req.onreadystatechange = () => {
+  if (req.readyState == XMLHttpRequest.DONE) {
+    console.log("1");
+  }
+};
+
+  req.open("PUT", "https://api.jsonbin.io/b/5fce2d0e516f9d1270293ac0", true);
+  req.setRequestHeader("Content-Type", "application/json");
+  req.setRequestHeader("secret-key", "$2b$10$rk7Pcq99UpxvI7sqMY0FOeGlKDiG8ychEv.BM.AjcIRPv9HK9.3Ay");
+    req.setRequestHeader("versioning", "false");
+  req.send(this.updatedevents);
+        },
+ 
         forceRerender() {
       this.dinamic += 1;
      
@@ -95,7 +119,7 @@ export default {
             this.event_link=this.singlevent[0].link;
             this.going=this.singlevent[0].going;
             this.days= new Date();
-            console.log( this.days);
+          
             
          
             
@@ -107,11 +131,16 @@ export default {
                                                                   "<img src='"+this.event_img+"' class='img-fluid'/>"+
                                                                    "<div class='event_going'>"+
                                                                     "<span>Datum:"+this.event_date+"</span><span>Mjesto:"+this.event_adress+"</span><span>Organizator:"+this.event_organisation+"</span><span>Web:<a id='web' href='"+this.event_link+"'>"+" "+this.event_link+"</a></span>"+
+                                                                   
                                                                    "</div>"+
+                                                                  "<div class='event_look'>"+
+                                                                     "<b>Ovaj događaj otvorilo je "+this.going+" korisnika</b>"+
+                                                                  "</div>"+
                                                                     "<div class='event_info'>"+
                                                                    "<b>"+this.event_caption+"</b>"+
                                                                    "<p>"+this.event_more+"</p>"+
                                                                    "<p>"+this.event_other+"</p>"+
+                                                               
                                                                    "</div>"+
                                                                    "</div>"+                  
                                                                     "</div>";
